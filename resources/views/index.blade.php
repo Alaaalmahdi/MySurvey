@@ -1,123 +1,104 @@
 <!DOCTYPE html>
 <head>
-    <title>My-Survey</title>
-  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <div class="scotch-tape"></div>
-    <h1 id="title">Survey Form</h1>
-    <p id="description">Let us know how we can improve freeCodeCamp</p>
-    <form id="survey-form" class="survey-form">
-      <div class="basic-info">
-        <div class="form-item">
-          <label for="name" id="name-label">* Name:</label>
-          <input type="text" id="name" placeholder="Enter your name" required>
+<div id="main">
+  <div id="bg"></div>
+  <div id="cover"></div>
+  <div id="form-outer">
+    <div id="form-container">
+      <h1 id="title">Survey Form</h1>
+      <p id="description">
+        Let us know how we can improve All Hands on Tech!
+
+      </p>
+      <form id="survey-form" method="GET" action="https://crossorigin.me/https://freecodecamp.com">
+        <div class="form-row">
+          <label id="name-label" for="name">Name <span class="required">*</span></label>
+          <input id="name" type="text" class="input-field-1" placeholder="Enter Your Name" required>
         </div>
-        <div class="form-item">
-          <label for="email" id="email-label">* Email:</label>
-          <input type="email" id="email" placeholder="Enter your Email" required>
+        <div class="form-row">
+          <label id="email-label" for="email">Email <span class="required">*</span></label>
+          <input id="email" type="email" class="input-field-1" placeholder="Enter Your Email" required>
         </div>
-        <div class="form-item">
-          <label for="nnumber" id="number-label">* Age</label>
-          <input type="number" id="number" placeholder="Age" min="5" max="110" required>
+        <div class="form-row">
+          <label id="number-label" for="age">Age  <span class="required">*</span></label>
+          <input id="number" type="number" class="input-field-1" min="1" max="125" placeholder="Age" required>
         </div>
-      </div>
-      <div class="form-item">
-        <label for="dropdown">Which option best describes your current role?</label>
-        <select id="dropdown">
-          <option>Student</option>
-          <option>Full Time Job</option>
-          <option>Full Time Learner</option>
-          <option>Prefer not to say</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="form-item">
-        <label>* How likely is that you would recommend freeCodeCamp to a friend?</label>
-        <div>
-          <div>
-            <input name="recommend" type="radio" value="Definitely" id="definitely">
-            <label for="definitely">Definitely</label>
-          </div>
-          <div>
-            <input name="recommend" type="radio" value="Maybe" id="maybe">
-            <label for="maybe">Maybe</label>
-          </div>
-          <div>
-            <input name="recommend" type="radio" value="Not sure" id="not-sure">
-            <label for="not-sure">Not sure</label>
-          </div>
+        <div class="form-row">
+          <label for="currentPos">Which option best describes your <span class="break">current role? </span><span class="required">*</span></label>
+          <select id="dropdown" name="currentPos" class="dropdown input-field-1" required>
+            <option disabled value selected>Select an option</option>
+            <option value="student">Student</option>
+            <option value="job">Full Time Job</option>
+            <option value="learner">Full Time Learner</option>
+            <option value="preferNo">Prefer Not to Say</option>
+            <option value="other">Other</option>
+          </select>
         </div>
-      </div>
-      <div class="form-item">
-      <label>What do you like most in FCC?</label>
-      <select>
-        <option>Challenges</option>
-        <option>Projects</option>
-        <option>Community</option>
-        <option>Open Source</option>
-      </select>
-      </div>
-      <div class="form-item">
-        <label>Things that should be improved in the future (Check all that apply):<label>
-        <div class="improvement">
-          <div>
-            <input type="checkbox" name="improvement" value="Front-end">
-            <label>Front-end Projects</label>
-          </div>
-          <div>
-            <input type="checkbox" name="improvement" value="Back-end">
-            <label>Back-end Projects</label>
-          </div>
-          <div>
-            <input type="checkbox" name="improvement" value="Data Visualization">
-            <label>Data Visualization</label>
-          </div>
-          <div>
-            <input type="checkbox" name="improvement" value="Chanllenges">
-            <label>Challenges</label>
-          </div>
-          <div>
-            <input type="checkbox" name="improvement" value="Open-source-community">
-            <label>Open Source Community</label>
-          </div>
-          <div>
-            <input type="checkbox" name="improvement" value="Gitter-help-rooms">
-            <label>Gitter help rooms</label>
-          </div>
-          <div>
-            <input type="checkbox" name="improvement" value="Videos">
-            <label>Videos</label>
-          </div>
-          <div>
-            <input type="checkbox" name="improvement" value="City-meetups">
-            <label>City Meetups</label>
-          </div>
-          <div>
-            <input type="checkbox" name="improvement" value="Wiki">
-            <label>Wiki</label>
-          </div>
-          <div>
-            <input type="checkbox" name="improvement" value="Forum">
-            <label>Forum</label>
-          </div>
-          <div>
-            <input type="checkbox" name="improvement" value="Addition-courses">
-            <label>Additional Courses</label>
-          </div>
+        <div class="form-row">
+          <label for="userRating">How likely would you recommend AllHandsOnTech to <span class="break">a friend? </span><span class="required">*</span></label>
+          <ul style="list-style-type: none">
+            <li>
+              <label class="radio"><input type="radio" class="userRating" name="userRating" value="1" required>Definitely<span class="radio-button"></span></label>
+            </li>
+            <li>
+              <label class="radio"><input type="radio" class="userRating" name="userRating" value="2" required checked>Maybe<span class="radio-button"></span></label>
+            </li>
+            <li>
+              <label class="radio"><input type="radio" class="userRating" name="userRating" value="3" required>Not Sure<span class="radio-button"></span></label>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="form-item">
-        <label for="comment">Any Comments or Suggestions?</label>
-        <textarea id="comment" placeholder="Enter your comment here..." rows="5"></textarea>
-      </div>
-      <div>
-        <input type="submit" id="submit">
-      </div>
-    </form>
+        <div class="form-row">
+          <label for="mostLike">Gender <span class="break">: </span></label>
+          <select id="dropdown" name="mostLike" class="dropdown input-field-1" required>
+
+            <option value="challenges">Female</option>
+            <option value="projects">Male</option>
+
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="preferences">Things that should be improved in the future
+(Check all <span class="break">that apply): </span></label>
+          <ul style="list-style-type: none">
+            <li>
+              <label class="check"><input type="checkbox" class="preferences" name="preferences" value="1">Front-end Projects<span class="checkbox"></span></label>
+            </li>
+            <li>
+              <label class="check"><input type="checkbox" class="preferences" name="preferences" value="2">Back-end Projects<span class="checkbox"></span></label>
+            </li>
+            <li>
+              <label class="check"><input type="checkbox" class="preferences" name="preferences" value="3">Data Visualization<span class="checkbox"></span></label>
+            </li>
+            <li>
+              <label class="check"><input type="checkbox" class="preferences" name="preferences" value="4">Challenges<span class="checkbox"></span></label>
+            </li>
+
+
+            <li>
+              <label class="check"><input type="checkbox" class="preferences" name="preferences" value="8">City Meetups<span class="checkbox"></span></label>
+            </li>
+
+
+            <li>
+              <label class="check"><input type="checkbox" class="preferences" name="preferences" value="11">Additional Courses<span class="checkbox"></span></label>
+            </li>
+          </ul>
+        </div>
+        <div class="form-row">
+          <label for="comments">Any Comments or Suggestions? <span class="required">*</span></label>
+          <textarea id="comments" class="comments input-field-2" placeholder="Enter your comment here" required></textarea>
+        </div>
+        <div class="form-row">
+          <button id="submit" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
   </div>
-  <div class="fcc-sticker"></div>
-  <a href="https://codepen.io/trangtran/" target="_blank" class="signature"></a>
+</div>
+<script src="app.js"></script>
 </body>
 </html>
